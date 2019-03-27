@@ -4,6 +4,9 @@ import shutil
 import time
 
 from selenium import webdriver
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+
+from lib.drivers.environments import environments
 
 
 def before_all(context):
@@ -18,6 +21,7 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     print("User data:", context.config.userdata)
+    binary = FirefoxBinary('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
     # behave -D browser=chrome
     if 'browser' in context.config.userdata.keys():
         if context.config.userdata['browser'] is None:
@@ -27,17 +31,10 @@ def before_scenario(context, scenario):
     else:
         browser = 'chrome'
     if browser == 'chrome':
-        context.browser = webdriver.Chrome(executable_path="./chromedriver")
+        context.browser = webdriver.Chrome(executable_path=(os.getcwd() + '\\' + environments(browser)))
     elif browser == 'firefox':
-        context.browser = webdriver.Firefox(executable_path="./geckodriver")
-    elif browser == 'safari':
-        context.browser = webdriver.Safari()
-    elif browser == 'ie':
-        context.browser = webdriver.Ie()
-    elif browser == 'opera':
-        context.browser = webdriver.Opera()
-    elif browser == 'phantomjs':
-        context.browser = webdriver.PhantomJS()
+        # this does not work, I am not sure why... for further investigation
+        context.browser = webdriver.Firefox(firefox_binary=binary)
     else:
         print("Browser you entered:", browser, "is invalid value")
 
