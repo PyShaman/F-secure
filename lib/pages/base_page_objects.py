@@ -1,5 +1,5 @@
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import *
 import traceback
 
@@ -25,14 +25,14 @@ class BasePage(object):
             if item in self.locator_dictionary.keys():
                 try:
                     WebDriverWait(self.browser, self.timeout).until(
-                        EC.presence_of_element_located(self.locator_dictionary[item])
+                        ec.presence_of_element_located(self.locator_dictionary[item])
                     )
                 except(TimeoutException, StaleElementReferenceException):
                     traceback.print_exc()
 
                 try:
                     WebDriverWait(self.browser, self.timeout).until(
-                        EC.visibility_of_element_located(self.locator_dictionary[item])
+                        ec.visibility_of_element_located(self.locator_dictionary[item])
                     )
                 except(TimeoutException, StaleElementReferenceException):
                     traceback.print_exc()

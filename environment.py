@@ -1,0 +1,69 @@
+import logging
+import os
+import shutil
+import time
+
+from selenium import webdriver
+
+
+def before_all(context):
+    # Create logger
+    context.logger = logging.getLogger('seleniumframework_tests')
+    handler = logging.FileHandler('./seleniumframework_tests.log')
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    handler.setFormatter(formatter)
+    context.logger.addHandler(handler)
+    context.logger.setLevel(logging.DEBUG)
+
+
+def before_scenario(context, scenario):
+    print("User data:", context.config.userdata)
+    # behave -D browser=chrome
+    if 'browser' in context.config.userdata.keys():
+        if context.config.userdata['browser'] is None:
+            browser = 'chrome'
+        else:
+            browser = context.config.userdata['browser']
+    else:
+        browser = 'chrome'
+    if browser == 'chrome':
+        context.browser = webdriver.Chrome(executable_path="./chromedriver")
+    elif browser == 'firefox':
+        context.browser = webdriver.Firefox(executable_path="./geckodriver")
+    elif browser == 'safari':
+        context.browser = webdriver.Safari()
+    elif browser == 'ie':
+        context.browser = webdriver.Ie()
+    elif browser == 'opera':
+        context.browser = webdriver.Opera()
+    elif browser == 'phantomjs':
+        context.browser = webdriver.PhantomJS()
+    else:
+        print("Browser you entered:", browser, "is invalid value")
+
+    context.browser.maximize_window()
+
+
+def after_scenario(context, scenario):
+    print("scenario status" + str(scenario.status))
+    if str(scenario.status) == "failed":
+        if not os.path.exists("failed_scenarios_screenshots"):
+            os.makedirs("failed_scenarios_screenshots")
+        os.chdir("failed_scenarios_screenshots")
+        context.browser.save_screenshot(scenario.name + "_failed.png")
+    context.browser.quit()
+
+
+def after_all(context):
+    print("User data:", context.config.userdata)
+    # behave -D ARCHIVE=Yes
+    if 'ARCHIVE' in context.config.userdata.keys():
+        if os.path.exists("failed_scenarios_screenshots"):
+            os.rmdir("failed_scenarios_screenshots")
+            os.makedirs("failed_scenarios_screenshots")
+        if context.config.userdata['ARCHIVE'] == "Yes":
+            shutil.make_archive(
+                time.strftime("%d_%m_%Y"),
+                'zip',
+                "failed_scenarios_screenshots")
+            # os.rmdir("failed_scenarios_screenshots")

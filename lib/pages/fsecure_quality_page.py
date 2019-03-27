@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from features.lib.pages.base_page_objects import BasePage
+from lib.pages.base_page_objects import BasePage
 
 
 class FsecureQualityEngineerPage(BasePage):

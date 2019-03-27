@@ -1,0 +1,121 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "jobSearch.feature:3",
+      "name": "User is meant to navigate to Careers tab and search for specific job offer",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "jobSearch.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:8"
+          },
+          "name": "User is on main page",
+          "result": {
+            "duration": 1.7726855278015137,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "jobSearch.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:14"
+          },
+          "name": "User navigates to \"Careers\" page",
+          "result": {
+            "duration": 0.5334732532501221,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "jobSearch.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:20"
+          },
+          "name": "User is on \"Careers\" page",
+          "result": {
+            "duration": 0.017682313919067383,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"/home/mbek/.local/lib/python3.5/site-packages/behave/model.py\", line 1621, in run",
+              "    match.run(runner.context)",
+              "  File \"/home/mbek/.local/lib/python3.5/site-packages/behave/matchers.py\", line 97, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"steps/JobSearch.py\", line 23, in step_impl",
+              "    assert page.title() in \"What do we stand for \u2013 want to be part of us?\"",
+              "TypeError: 'in <string>' requires string as left operand, not WebElement"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "When",
+          "location": "jobSearch.feature:7",
+          "name": "User mouseover \"Careers\" top menu bar",
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "jobSearch.feature:8",
+          "name": "User selects \"Job openings\" option",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "jobSearch.feature:9",
+          "name": "User is navigated to list of all jobs",
+          "step_type": "then"
+        },
+        {
+          "keyword": "When",
+          "location": "jobSearch.feature:10",
+          "name": "User selects \"Pozna\u0144\" from drop down menu",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "jobSearch.feature:11",
+          "name": "Job list is filtered to the one city",
+          "step_type": "then"
+        },
+        {
+          "keyword": "When",
+          "location": "jobSearch.feature:12",
+          "name": "User search for \"Quality Engineer\"",
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "jobSearch.feature:13",
+          "name": "Clicks on \"View job\"",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "jobSearch.feature:14",
+          "name": "new browser tab with \"Quality Engineer\" job details opens",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "jobSearch.feature:1",
+  "name": "Job search",
+  "status": "failed",
+  "tags": []
+}
+]

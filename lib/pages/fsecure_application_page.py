@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from features.lib.pages.base_page_objects import BasePage
+from lib.pages.base_page_objects import BasePage
 
 
 class FsecureApplicationPage(BasePage):
@@ -8,10 +8,8 @@ class FsecureApplicationPage(BasePage):
         BasePage.__init__(self, context.browser)
 
     locator_dictionary = {
-        "title": (By.CLASS_NAME, 'lead'),
-        "name": (By.ID, 'id_first_name'),
-        "lastname": (By.ID, 'id_last_name'),
-        "email": (By.ID, 'id_email')
+        "title": (By.PARTIAL_LINK_TEXT, 'want to be part of us?'),
+        "positions": (By.CLASS_NAME, 'btn btn-secondary btn-inverse m-t-1')
     }
     # self.title = context.browser.find_element(By.CLASS_NAME, 'lead')
     # self.name = context.browser.find_element(By.ID, 'id_first_name')
