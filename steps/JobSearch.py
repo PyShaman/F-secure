@@ -7,25 +7,26 @@ from lib.pages.fsecure_careers_page import FsecureCareersPage
 
 @given("User is on main page")
 def step_impl(context):
-    page = FsecureHomePage(context)
-    page.visit("https://www.f-secure.com/en/welcome")
+    page_1 = FsecureHomePage(context)
+    page_1.visit("https://www.f-secure.com/en/welcome")
 
 
 @when('User navigates to "Careers" page')
 def step_impl(context):
-    page = FsecureHomePage(context)
-    page.careers().send_keys(Keys.ENTER)
+    page_1 = FsecureHomePage(context)
+    page_1.careers().send_keys(Keys.ENTER)
 
 
 @then('User is on "Careers" page')
 def step_impl(context):
-    page2 = FsecureCareersPage(context)
-    assert 'Careers | F-Secure' in page2.page_title()
+    page_2 = FsecureCareersPage(context)
+    assert 'Careers | F-Secure' in page_2.page_title()
 
 
-@when(u'User mouseover "Careers" top menu bar')
+@when('User mouseover "Careers" top menu bar')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When User mouseover "Careers" top menu bar')
+    page_3 = FsecureCareersPage(context)
+
 
 
 @when(u'User selects "Job openings" option')

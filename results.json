@@ -16,7 +16,7 @@
           },
           "name": "User is on main page",
           "result": {
-            "duration": 1.6109914779663086,
+            "duration": 2.021355390548706,
             "status": "passed"
           },
           "step_type": "given"
@@ -30,7 +30,7 @@
           },
           "name": "User navigates to \"Careers\" page",
           "result": {
-            "duration": 1.0546352863311768,
+            "duration": 1.2509825229644775,
             "status": "passed"
           },
           "step_type": "when"
@@ -44,7 +44,7 @@
           },
           "name": "User is on \"Careers\" page",
           "result": {
-            "duration": 0.0002930164337158203,
+            "duration": 0.00015807151794433594,
             "status": "passed"
           },
           "step_type": "then"
@@ -58,7 +58,7 @@
           },
           "name": "User mouseover \"Careers\" top menu bar",
           "result": {
-            "duration": 0.0009570121765136719,
+            "duration": 0.0006873607635498047,
             "error_message": [
               "Traceback (most recent call last):",
               "  File \"/home/mbek/.local/lib/python3.5/site-packages/behave/model.py\", line 1621, in run",

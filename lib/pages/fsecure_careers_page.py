@@ -9,11 +9,15 @@ class FsecureCareersPage(BasePage):
 
     locator_dictionary = {
         "page_title": 'Careers | F-Secure',
-        "positions": (By.CLASS_NAME, 'btn btn-secondary btn-inverse m-t-1')
+        "careers_menu": (By.XPATH, '//*[@id="p4-section-subnav"]/li[3]'),
+        "job_openings": (By.XPATH, '//*[@id="p4-section-subnav"]/li[3]/ul/li[2]/a')
     }
 
     def page_title(self):
         return self.locator_dictionary['page_title']
 
-    def positions(self):
+    def careers_menu(self):
         return self.browser.find_element(*self.locator_dictionary['positions'])
+
+    def job_openings(self):
+        return self.browser.find_element(*self.locator_dictionary['job_openings'])
