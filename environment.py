@@ -36,9 +36,10 @@ def before_scenario(context, scenario):
         if platform == 'linux' or platform == 'linux2':
             binary = FirefoxBinary("/usr/bin/firefox")
         if platform == 'win32':
-            binary = FirefoxBinary('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
+            binary = FirefoxBinary('C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe')
         # this does not work, I am not sure why... for further investigation
         context.browser = webdriver.Firefox(firefox_binary=binary)
+        #     context.browser = webdriver.Firefox(executable_path=(os.getcwd() + '/' + os_platforms(browser) + '-headless'))
     else:
         print("Browser you entered:", browser, "is invalid value")
 
