@@ -10,25 +10,67 @@
         {
           "keyword": "Given",
           "location": "jobSearch.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:8"
+          },
           "name": "User is on main page",
+          "result": {
+            "duration": 1.6109914779663086,
+            "status": "passed"
+          },
           "step_type": "given"
         },
         {
           "keyword": "When",
           "location": "jobSearch.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:14"
+          },
           "name": "User navigates to \"Careers\" page",
+          "result": {
+            "duration": 1.0546352863311768,
+            "status": "passed"
+          },
           "step_type": "when"
         },
         {
           "keyword": "Then",
           "location": "jobSearch.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:20"
+          },
           "name": "User is on \"Careers\" page",
+          "result": {
+            "duration": 0.0002930164337158203,
+            "status": "passed"
+          },
           "step_type": "then"
         },
         {
           "keyword": "When",
           "location": "jobSearch.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:26"
+          },
           "name": "User mouseover \"Careers\" top menu bar",
+          "result": {
+            "duration": 0.0009570121765136719,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"/home/mbek/.local/lib/python3.5/site-packages/behave/model.py\", line 1621, in run",
+              "    match.run(runner.context)",
+              "  File \"/home/mbek/.local/lib/python3.5/site-packages/behave/matchers.py\", line 97, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"steps/JobSearch.py\", line 28, in step_impl",
+              "    raise NotImplementedError(u'STEP: When User mouseover \"Careers\" top menu bar')",
+              "NotImplementedError: STEP: When User mouseover \"Careers\" top menu bar"
+            ],
+            "status": "failed"
+          },
           "step_type": "when"
         },
         {

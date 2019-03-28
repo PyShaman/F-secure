@@ -19,8 +19,8 @@ def step_impl(context):
 
 @then('User is on "Careers" page')
 def step_impl(context):
-    page = FsecureCareersPage(context)
-    assert page.title() in "What do we stand for – want to be part of us?"
+    page2 = FsecureCareersPage(context)
+    assert 'Careers | F-Secure' in page2.page_title()
 
 
 @when(u'User mouseover "Careers" top menu bar')

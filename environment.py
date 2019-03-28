@@ -3,10 +3,11 @@ import os
 import shutil
 import time
 
+from sys import platform
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
-from lib.drivers.environments import environments
+from lib.drivers.os_platforms import os_platforms
 
 
 def before_all(context):
@@ -21,7 +22,6 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     print("User data:", context.config.userdata)
-    binary = FirefoxBinary('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
     # behave -D browser=chrome
     if 'browser' in context.config.userdata.keys():
         if context.config.userdata['browser'] is None:
@@ -31,17 +31,19 @@ def before_scenario(context, scenario):
     else:
         browser = 'chrome'
     if browser == 'chrome':
-        context.browser = webdriver.Chrome(executable_path=(os.getcwd() + '\\' + environments(browser)))
+        context.browser = webdriver.Chrome(executable_path=(os.getcwd() + '/' + os_platforms(browser)))
     elif browser == 'firefox':
+        if platform == 'linux' or platform == 'linux2':
+            binary = FirefoxBinary("/usr/bin/firefox")
+        if platform == 'win32':
+            binary = FirefoxBinary('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
         # this does not work, I am not sure why... for further investigation
         context.browser = webdriver.Firefox(firefox_binary=binary)
-    elif browser == "opera":
-        context.browser = webdriver.Opera(executable_path=os.getcwd() + '\\' + environments(browser))
     else:
         print("Browser you entered:", browser, "is invalid value")
 
     context.browser.maximize_window()
-
+    # context.browser.set_window_size(480, 320)
 
 def after_scenario(context, scenario):
     print("scenario status" + str(scenario.status))
