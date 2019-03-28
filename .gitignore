@@ -1,7 +1,9 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+__pycache__/*
 *.py[cod]
-/.idea/
+.idea
+lib/drivers/__pychache__/*
+lib/pages/__pychache__/*
 
 # Logs and test results
 *.json
