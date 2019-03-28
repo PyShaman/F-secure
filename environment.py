@@ -45,6 +45,7 @@ def before_scenario(context, scenario):
     context.browser.maximize_window()
     # context.browser.set_window_size(480, 320)
 
+
 def after_scenario(context, scenario):
     print("scenario status" + str(scenario.status))
     if str(scenario.status) == "failed":

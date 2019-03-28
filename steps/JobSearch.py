@@ -1,64 +1,71 @@
+import time
+
 from behave import *
-from lib.pages import *
 from selenium.webdriver.common.keys import Keys
 
+from lib.pages import *
+from lib.pages.common_elements import CommonElements as Ce
 from lib.pages.fsecure_careers_page import FsecureCareersPage
+from lib.pages.fsecure_job_openings_page import FsecureJobOpeningsPage
+from lib.pages.fsecure_quality_page import FsecureQualityEngineerPage
 
 
 @given("User is on main page")
 def step_impl(context):
-    page_1 = FsecureHomePage(context)
-    page_1.visit("https://www.f-secure.com/en/welcome")
+    page = FsecureHomePage(context)
+    page.visit("https://www.f-secure.com/en/welcome")
 
 
 @when('User navigates to "Careers" page')
 def step_impl(context):
-    page_1 = FsecureHomePage(context)
-    page_1.careers().send_keys(Keys.ENTER)
+    page = FsecureHomePage(context)
+    page.careers().send_keys(Keys.ENTER)
 
 
 @then('User is on "Careers" page')
 def step_impl(context):
-    page_2 = FsecureCareersPage(context)
-    assert 'Careers | F-Secure' in page_2.page_title()
+    page = FsecureCareersPage(context)
+    assert 'Careers | F-Secure' in page.page_title()
 
 
-@when('User mouseover "Careers" top menu bar')
+@when('User clicks on "See our open positions" button')
 def step_impl(context):
-    page_3 = FsecureCareersPage(context)
+    page = FsecureCareersPage(context)
+    page.job_openings().send_keys(Keys.ENTER)
 
 
-
-@when(u'User selects "Job openings" option')
+@then('User is navigated to list of all jobs')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When User selects "Job openings" option')
+    page = FsecureJobOpeningsPage(context)
+    assert 'Job openings | F-Secure' in page.page_title()
 
 
-@then(u'User is navigated to list of all jobs')
+@when('User selects "Poznań" from drop down menu')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then User is navigated to list of all jobs')
+    page = FsecureJobOpeningsPage(context)
+    page.job_city().click()
+    page.select_city()
 
 
-@when(u'User selects "Poznań" from drop down menu')
+@when('User search for "Quality Engineer"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When User selects "Poznań" from drop down menu')
+    page = FsecureJobOpeningsPage(context)
+    page.page_change_right().send_keys(Keys.ENTER + Keys.HOME)
+    time.sleep(1)
+    assert 'Quality Engineer' in page.qa_search().text
 
 
-@then(u'Job list is filtered to the one city')
+@when(u'User clicks on "View job"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then Job list is filtered to the one city')
+    page = FsecureJobOpeningsPage(context)
+    page.view_job().click()
+    # sleep because new tab will be opened
+    time.sleep(5)
 
 
-@when(u'User search for "Quality Engineer"')
+@then('New browser tab with "Quality Engineer" job details opens')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When User search for "Quality Engineer"')
-
-
-@when(u'Clicks on "View job"')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When Clicks on "View job"')
-
-
-@then(u'new browser tab with "Quality Engineer" job details opens')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Then new browser tab with "Quality Engineer" job details opens')
+    Ce.switch_new_tab(context, 1)
+    page = FsecureQualityEngineerPage(context)
+    assert "Quality Engineer" in page.title().text
+    assert "Quality Engineer wanted to work with our key corporate security products!" in page.announcement().text
