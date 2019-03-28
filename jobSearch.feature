@@ -4,11 +4,9 @@ Feature: Job search
         Given User is on main page
         When User navigates to "Careers" page
         Then User is on "Careers" page
-        When User mouseover "Careers" top menu bar
-        And User selects "Job openings" option
+        When User clicks on "See our open positions" button
         Then User is navigated to list of all jobs
         When User selects "Poznań" from drop down menu
-        Then Job list is filtered to the one city
-        When User search for "Quality Engineer"
-        And Clicks on "View job"
-        Then new browser tab with "Quality Engineer" job details opens
+        And User search for "Quality Engineer"
+        And User clicks on "View job"
+        Then New browser tab with "Quality Engineer" job details opens

@@ -1,19 +1,20 @@
 from selenium.webdriver.common.by import By
-from lib.pages.base_page_objects import BasePage
+from lib.pages.common_elements import CommonElements
 
 
-class FsecureCareersPage(BasePage):
+class FsecureCareersPage(CommonElements):
 
     def __init__(self, context):
-        BasePage.__init__(self, context.browser)
+        CommonElements.__init__(self, context.browser)
 
     locator_dictionary = {
-        "title": (By.XPATH, '//*[@id="p_p_id_56_INSTANCE_QfaI9ELwQzF3_"]/div/div/div/div[1]/section/div/div/div/div/h2'),
-        "positions": (By.CLASS_NAME, 'btn btn-secondary btn-inverse m-t-1')
+        "page_title": 'Careers | F-Secure',
+        "job_openings": (By.XPATH, '//*[@id="p_p_id_56_INSTANCE_gJitE6b6gf8s_"]/div/div/div/div[1]/section/div/div['
+                                   '2]/div[2]/div/a')
     }
 
-    def title(self):
-        return self.browser.find_element(*self.locator_dictionary['title'])
+    def page_title(self):
+        return self.locator_dictionary['page_title']
 
-    def positions(self):
-        return self.browser.find_element(*self.locator_dictionary['positions'])
+    def job_openings(self):
+        return self.browser.find_element(*self.locator_dictionary['job_openings'])

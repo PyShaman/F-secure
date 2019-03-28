@@ -1,11 +1,11 @@
 from selenium.webdriver.common.by import By
-from lib.pages.base_page_objects import BasePage
+from lib.pages.common_elements import CommonElements
 
 
-class FsecureApplicationPage(BasePage):
+class FsecureApplicationPage(CommonElements):
 
     def __init__(self, context):
-        BasePage.__init__(self, context.browser)
+        CommonElements.__init__(self, context.browser)
 
     locator_dictionary = {
         "title": (By.PARTIAL_LINK_TEXT, 'want to be part of us?'),

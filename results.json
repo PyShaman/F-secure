@@ -5,72 +5,132 @@
       "keyword": "Scenario",
       "location": "jobSearch.feature:3",
       "name": "User is meant to navigate to Careers tab and search for specific job offer",
-      "status": "failed",
+      "status": "passed",
       "steps": [
         {
           "keyword": "Given",
           "location": "jobSearch.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:13"
+          },
           "name": "User is on main page",
+          "result": {
+            "duration": 1.8770031929016113,
+            "status": "passed"
+          },
           "step_type": "given"
         },
         {
           "keyword": "When",
           "location": "jobSearch.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:19"
+          },
           "name": "User navigates to \"Careers\" page",
+          "result": {
+            "duration": 0.620964765548706,
+            "status": "passed"
+          },
           "step_type": "when"
         },
         {
           "keyword": "Then",
           "location": "jobSearch.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:25"
+          },
           "name": "User is on \"Careers\" page",
+          "result": {
+            "duration": 0.0010378360748291016,
+            "status": "passed"
+          },
           "step_type": "then"
         },
         {
           "keyword": "When",
           "location": "jobSearch.feature:7",
-          "name": "User mouseover \"Careers\" top menu bar",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:31"
+          },
+          "name": "User clicks on \"See our open positions\" button",
+          "result": {
+            "duration": 1.1029644012451172,
+            "status": "passed"
+          },
           "step_type": "when"
         },
         {
-          "keyword": "And",
+          "keyword": "Then",
           "location": "jobSearch.feature:8",
-          "name": "User selects \"Job openings\" option",
-          "step_type": "when"
-        },
-        {
-          "keyword": "Then",
-          "location": "jobSearch.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:37"
+          },
           "name": "User is navigated to list of all jobs",
+          "result": {
+            "duration": 0.001001596450805664,
+            "status": "passed"
+          },
           "step_type": "then"
         },
         {
           "keyword": "When",
-          "location": "jobSearch.feature:10",
+          "location": "jobSearch.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:43"
+          },
           "name": "User selects \"Pozna\u0144\" from drop down menu",
-          "step_type": "when"
-        },
-        {
-          "keyword": "Then",
-          "location": "jobSearch.feature:11",
-          "name": "Job list is filtered to the one city",
-          "step_type": "then"
-        },
-        {
-          "keyword": "When",
-          "location": "jobSearch.feature:12",
-          "name": "User search for \"Quality Engineer\"",
+          "result": {
+            "duration": 0.1710186004638672,
+            "status": "passed"
+          },
           "step_type": "when"
         },
         {
           "keyword": "And",
-          "location": "jobSearch.feature:13",
-          "name": "Clicks on \"View job\"",
+          "location": "jobSearch.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:50"
+          },
+          "name": "User search for \"Quality Engineer\"",
+          "result": {
+            "duration": 1.0889971256256104,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "jobSearch.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:58"
+          },
+          "name": "User clicks on \"View job\"",
+          "result": {
+            "duration": 5.100996494293213,
+            "status": "passed"
+          },
           "step_type": "when"
         },
         {
           "keyword": "Then",
-          "location": "jobSearch.feature:14",
-          "name": "new browser tab with \"Quality Engineer\" job details opens",
+          "location": "jobSearch.feature:12",
+          "match": {
+            "arguments": [],
+            "location": "steps/JobSearch.py:66"
+          },
+          "name": "New browser tab with \"Quality Engineer\" job details opens",
+          "result": {
+            "duration": 1.0810511112213135,
+            "status": "passed"
+          },
           "step_type": "then"
         }
       ],
@@ -81,7 +141,7 @@
   "keyword": "Feature",
   "location": "jobSearch.feature:1",
   "name": "Job search",
-  "status": "failed",
+  "status": "passed",
   "tags": []
 }
 ]
