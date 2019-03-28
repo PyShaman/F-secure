@@ -35,6 +35,8 @@ def before_scenario(context, scenario):
     elif browser == 'firefox':
         # this does not work, I am not sure why... for further investigation
         context.browser = webdriver.Firefox(firefox_binary=binary)
+    elif browser == "opera":
+        context.browser = webdriver.Opera(executable_path=os.getcwd() + '\\' + environments(browser))
     else:
         print("Browser you entered:", browser, "is invalid value")
 
