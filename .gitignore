@@ -1,6 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/*
-/.idea/*
+.idea/*
 lib/drivers/__pychache__/*
 lib/pages/__pychache__/*
 
