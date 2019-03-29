@@ -13,4 +13,7 @@ class FsecureHomePage(CommonElements):
     }
 
     def careers(self):
+        """
+        :return: locator of button
+        """
         return self.find_element(*self.locator_dictionary['careers'])

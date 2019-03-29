@@ -19,19 +19,37 @@ class FsecureJobOpeningsPage(CommonElements):
     }
 
     def page_title(self):
+        """
+        :return: locator ot page title
+        """
         return self.locator_dictionary['page_title']
 
     def job_city(self):
+        """
+        :return: locator of drop down menu
+        """
         return self.browser.find_element(*self.locator_dictionary['job_city'])
 
     def select_city(self):
+        """
+        :return: locator of Poznań city
+        """
         return Select(self.browser.find_element(*self.locator_dictionary['job_city'])).select_by_value('Poznań')
 
     def page_change_right(self):
+        """
+        :return: locator of pagination
+        """
         return self.browser.find_element(*self.locator_dictionary['page_change_right'])
 
     def qa_search(self):
+        """
+        :return: locator of Quality Engineer job offer
+        """
         return self.browser.find_element(*self.locator_dictionary['QA'])
 
     def view_job(self):
+        """
+        :return: locator of view job button
+        """
         return self.browser.find_element(*self.locator_dictionary['view_job'])

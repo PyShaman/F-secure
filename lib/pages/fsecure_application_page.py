@@ -11,7 +11,3 @@ class FsecureApplicationPage(CommonElements):
         "title": (By.PARTIAL_LINK_TEXT, 'want to be part of us?'),
         "positions": (By.CLASS_NAME, 'btn btn-secondary btn-inverse m-t-1')
     }
-    # self.title = context.browser.find_element(By.CLASS_NAME, 'lead')
-    # self.name = context.browser.find_element(By.ID, 'id_first_name')
-    # self.lastname = context.browser.find_element(By.ID, 'id_last_name')
-    # self.email = context.browser.find_element(By.ID, 'id_email')

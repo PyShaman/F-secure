@@ -14,7 +14,13 @@ class FsecureCareersPage(CommonElements):
     }
 
     def page_title(self):
+        """
+        :return: page title
+        """
         return self.locator_dictionary['page_title']
 
     def job_openings(self):
+        """
+        :return: locator of button
+        """
         return self.browser.find_element(*self.locator_dictionary['job_openings'])

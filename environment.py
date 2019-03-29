@@ -22,7 +22,6 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     print("User data:", context.config.userdata)
-    # behave -D browser=chrome
     if 'browser' in context.config.userdata.keys():
         if context.config.userdata['browser'] is None:
             browser = 'chrome'
@@ -39,12 +38,11 @@ def before_scenario(context, scenario):
             binary = FirefoxBinary('C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe')
         # this does not work, I am not sure why... for further investigation
         context.browser = webdriver.Firefox(firefox_binary=binary)
-        #     context.browser = webdriver.Firefox(executable_path=(os.getcwd() + '/' + os_platforms(browser) + '-headless'))
+        # context.browser = webdriver.Firefox(executable_path=(os.getcwd() + '/' + os_platforms(browser) + '-headless'))
     else:
         print("Browser you entered:", browser, "is invalid value")
 
     context.browser.maximize_window()
-    # context.browser.set_window_size(480, 320)
 
 
 def after_scenario(context, scenario):
@@ -69,4 +67,3 @@ def after_all(context):
                 time.strftime("%d_%m_%Y"),
                 'zip',
                 "failed_scenarios_screenshots")
-            # os.rmdir("failed_scenarios_screenshots")

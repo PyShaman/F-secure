@@ -13,7 +13,13 @@ class FsecureQualityEngineerPage(CommonElements):
     }
 
     def title(self):
+        """
+        :return: return locator of job title
+        """
         return self.browser.find_element(*self.locator_dictionary['job_title'])
 
     def announcement(self):
+        """
+        :return: return locator of job announcement
+        """
         return self.browser.find_element(*self.locator_dictionary['job_announcement'])

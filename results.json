@@ -16,7 +16,7 @@
           },
           "name": "User is on main page",
           "result": {
-            "duration": 1.8770031929016113,
+            "duration": 3.0425031185150146,
             "status": "passed"
           },
           "step_type": "given"
@@ -30,7 +30,7 @@
           },
           "name": "User navigates to \"Careers\" page",
           "result": {
-            "duration": 0.620964765548706,
+            "duration": 3.1699934005737305,
             "status": "passed"
           },
           "step_type": "when"
@@ -44,7 +44,7 @@
           },
           "name": "User is on \"Careers\" page",
           "result": {
-            "duration": 0.0010378360748291016,
+            "duration": 0.00029468536376953125,
             "status": "passed"
           },
           "step_type": "then"
@@ -58,7 +58,7 @@
           },
           "name": "User clicks on \"See our open positions\" button",
           "result": {
-            "duration": 1.1029644012451172,
+            "duration": 2.438223361968994,
             "status": "passed"
           },
           "step_type": "when"
@@ -72,7 +72,7 @@
           },
           "name": "User is navigated to list of all jobs",
           "result": {
-            "duration": 0.001001596450805664,
+            "duration": 0.00010442733764648438,
             "status": "passed"
           },
           "step_type": "then"
@@ -86,7 +86,7 @@
           },
           "name": "User selects \"Pozna\u0144\" from drop down menu",
           "result": {
-            "duration": 0.1710186004638672,
+            "duration": 0.11202096939086914,
             "status": "passed"
           },
           "step_type": "when"
@@ -100,7 +100,7 @@
           },
           "name": "User search for \"Quality Engineer\"",
           "result": {
-            "duration": 1.0889971256256104,
+            "duration": 1.1027460098266602,
             "status": "passed"
           },
           "step_type": "when"
@@ -114,7 +114,7 @@
           },
           "name": "User clicks on \"View job\"",
           "result": {
-            "duration": 5.100996494293213,
+            "duration": 5.0787036418914795,
             "status": "passed"
           },
           "step_type": "when"
@@ -128,7 +128,7 @@
           },
           "name": "New browser tab with \"Quality Engineer\" job details opens",
           "result": {
-            "duration": 1.0810511112213135,
+            "duration": 0.10211491584777832,
             "status": "passed"
           },
           "step_type": "then"
